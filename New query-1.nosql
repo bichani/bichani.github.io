@@ -1,1 +1,0 @@
-select c.학생들["1"] as grade from c where c.id = "7"
