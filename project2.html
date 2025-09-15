@@ -10,6 +10,47 @@
         body {
             font-family: 'Inter', 'Noto Sans KR', sans-serif;
         }
+        /* 이미지 모달 스타일 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            cursor: pointer;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s linear 0.3s, opacity 0.3s;
+        }
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0s linear 0s, opacity 0.3s;
+        }
+        .modal-content {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            max-width: 80vw;
+            max-height: 90vh;
+            overflow: auto;
+            cursor: default;
+            transform: scale(0.95);
+            transition: transform 0.3s ease-out;
+        }
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-600">
@@ -31,7 +72,10 @@
                 <h1 class="text-3xl font-bold mb-4 text-slate-900">Azure, Kubernetes 기반 실시간 테트리스 매칭 플랫폼</h1>
                 <p class="text-sm text-slate-500 font-medium">2025년 9월</p>
                 <p class="font-semibold text-xl mt-4">안정적이고 확장 가능한 게임 서비스를 위한 클라우드 네이티브 인프라 설계 및 자동화</p>
-                <img src="pj2.png" alt="프로젝트 아키텍처" class="my-6 rounded-lg border border-slate-200">
+                
+                <a href="pj2.png" id="projectImageLink" class="cursor-zoom-in">
+                    <img src="pj2.png" alt="프로젝트 아키텍처" class="my-6 rounded-lg border border-slate-200">
+                </a>
                 
                 <div class="mt-6">
                     <h2 class="text-xl font-bold text-slate-800">사용 기술</h2>
@@ -46,7 +90,7 @@
                     </div>
                 </div>
 
-<h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">프로젝트 목표</h2>
+                <h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">프로젝트 목표</h2>
                 <p>단순한 게임 개발을 넘어, 클라우드 기술(AKS, ACR 등)을 활용하여 안정성, 확장성, 보안 세 가지 핵심 가치를 갖춘 게임 서비스를 구축하는 것을 목표로 삼았습니다. 사용자에게는 원활한 실시간 통신과 안전한 데이터 저장을 보장하고, 운영적으로는 트래픽 변동에 유연하게 대응할 수 있는 인프라를 만드는 데 집중했습니다.</p>
                 
                 <div class="border-t border-slate-200 pt-4 mt-6">
@@ -72,6 +116,33 @@
             </div>
         </div>
     </main>
+
+    <!-- 이미지 모달 -->
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="확대된 이미지" />
+        </div>
+    </div>
+
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const projectImageLink = document.getElementById('projectImageLink');
+
+            if (projectImageLink) {
+                projectImageLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modalImage.src = this.href;
+                    modal.classList.add('active');
+                });
+            }
+
+            modal.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
