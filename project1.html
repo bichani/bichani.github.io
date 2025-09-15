@@ -94,8 +94,8 @@
                 <div class="border-t border-slate-200 pt-4 mt-6">
                     <h2 class="text-2xl font-bold mt-3 mb-3 text-slate-800">주요 역할 및 해결 과정</h2>
                     <p><strong>Terraform을 활용한 인프라 자동화 (IaC):</strong> 반복적인 인프라 구축 작업을 자동화하고 일관성을 유지하기 위해 Terraform을 도입했습니다. 모든 인프라(VPC, Subnet, EC2 등)를 코드로 관리함으로써, 휴먼 에러를 최소화하고 향후 유사한 이벤트 발생 시 신속하게 기존 환경을 재사용하고 배포할 수 있는 기반을 마련했습니다.</p>
-                    <p><strong>CI/CD 파이프라인 구축:</strong> 개발 효율성을 높이기 위해 GitHub Actions를 활용한 CI/CD 파이프라인을 구축했습니다. 팀원이 Django 설정 파일을 수정하여 GitHub에 Push하면, 자동으로 Docker 이미지를 빌드하고 Amazon ECS(Elastic Container Service)에 무중단 롤링 업데이트 방식으로 배포되도록 워크플로우를 설계했습니다. 이를 통해 수동 배포 과정을 제거하고, 코드 변경 사항을 신속하고 안정적으로 운영 환경에 반영할 수 있었습니다.</p>
-                    <p><strong>오토 스케일링 및 부하 분산 설계:</strong> 티켓 예매 시작과 동시에 발생하는 트래픽 급증에 유연하게 대응하기 위해 Auto Scaling Group(ASG)과 Application Load Balancer(ALB)를 아키텍처의 핵심으로 구성했습니다. ALB가 사용자 요청을 여러 EC2 인스턴스에 고르게 분산시켜 특정 서버의 과부하를 방지하고, ASG는 실시간 트래픽 수요에 맞춰 인스턴스 수를 자동으로 확장 및 축소하여 최적의 자원 효율성과 성능을 유지하도록 설계했습니다.</p>
+                    <p><strong>CI/CD 파이프라인 구축:</strong> 개발 효율성을 높이기 위해 GitHub Actions를 활용한 CI/CD 파이프라인을 구축했습니다. 팀원이 Django 설정 파일을 수정하여 GitHub에 Push하면, 자동으로 Docker 이미지를 빌드하고 Amazon ECS에 무중단 롤링 업데이트 방식으로 배포되도록 워크플로우를 설계했습니다. 이를 통해 수동 배포 과정을 제거하고, 코드 변경 사항을 신속하고 안정적으로 운영 환경에 반영할 수 있었습니다.</p>
+                    <p><strong>오토 스케일링 및 부하 분산 설계:</strong> 티켓 예매 시작과 동시에 발생하는 트래픽 급증에 유연하게 대응하기 위해 ASG와 ALB를 아키텍처의 핵심으로 구성했습니다. ALB가 사용자 요청을 여러 EC2 인스턴스에 고르게 분산시켜 특정 서버의 과부하를 방지하고, ASG는 실시간 트래픽 수요에 맞춰 인스턴스 수를 자동으로 확장 및 축소하여 최적의 자원 효율성과 성능을 유지하도록 설계했습니다.</p>
                 </div>
                 
                 <h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">성과</h2>
