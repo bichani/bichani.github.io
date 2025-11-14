@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Topia 프로젝트 상세 - 박한비 포트폴리오</title>
+    <title>Ticket Topia プロジェクト詳細 - パク・ハンビ ポートフォリオ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
         body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif; /* Noto Sans JP로 변경 권장 */
         }
         /* 이미지 모달 스타일 */
         .modal-overlay {
@@ -61,7 +61,7 @@
                 <a href="./index.html" class="text-xl font-bold text-slate-800 hover:text-blue-600 transition-colors">Hanbi's Portfolio</a>
             </div>
             <nav>
-                <a href="./index.html" class="text-slate-500 hover:text-blue-600 font-semibold transition-colors">← 돌아가기</a>
+                <a href="./index.html" class="text-slate-500 hover:text-blue-600 font-semibold transition-colors">← 戻る</a>
             </nav>
         </div>
     </header>
@@ -70,15 +70,15 @@
         <div class="bg-white p-8 sm:p-10 rounded-2xl shadow-lg max-w-4xl mx-auto">
             <div class="prose prose-slate max-w-none prose-p:leading-relaxed">
                 <h1 class="text-3xl font-bold mb-4 text-slate-900">Ticket Topia</h1>
-                <p class="text-sm text-slate-500 font-medium">2024년 7월 ~ 8월</p>
-                <p class="font-semibold text-xl mt-4">확장성 및 재사용성을 고려한 대규모 티켓 예매 서비스 인프라 구축</p>
+                <p class="text-sm text-slate-500 font-medium">2024年 7月 ~ 8月</p>
+                <p class="font-semibold text-xl mt-4">拡張性及び再利用性を考慮した大規模チケット予約サービスインフラの構築</p>
                 
                 <a href="pj1.png" id="projectImageLink" class="cursor-zoom-in">
-                    <img src="pj1.png" alt="Ticket Topia 아키텍처 설계도" class="my-6 rounded-lg border border-slate-200">
+                    <img src="pj1.png" alt="Ticket Topia アーキテクチャ設計図" class="my-6 rounded-lg border border-slate-200">
                 </a>
                 
                 <div class="mt-6">
-                    <h2 class="text-xl font-bold text-slate-800">사용 기술</h2>
+                    <h2 class="text-xl font-bold text-slate-800">使用技術</h2>
                     <div class="flex flex-wrap gap-2 mt-2">
                         <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-3 py-1 rounded-full">AWS</span>
                         <span class="bg-violet-100 text-violet-800 text-xs font-semibold px-3 py-1 rounded-full">Terraform</span>
@@ -88,25 +88,25 @@
                     </div>
                 </div>
 
-                <h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">프로젝트 목표</h2>
-                <p>예상 동시 접속자 30만 명을 안정적으로 수용할 수 있는 티켓 예매 서비스 환경을 구축하는 것을 목표로 했습니다. 1인 1매 제한, 결제 순 좌석 배치, 매크로 방지 등 비즈니스 요구사항을 만족시키면서, 예매 당일 폭증하는 트래픽을 효과적으로 처리하는 데 중점을 두었습니다.</p>
+                <h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">プロジェクト目標</h2>
+                <p>想定同時接続者数30万人を安定的に収容できるチケット予約サービス環境を構築することを目標としました。1人1枚制限、決済順の座席配置、マクロ防止などのビジネス要件を満たしつつ、予約当日に急増するトラフィックを効果的に処理することに重点を置きました。</p>
                 
                 <div class="border-t border-slate-200 pt-4 mt-6">
-                    <h2 class="text-2xl font-bold mt-3 mb-3 text-slate-800">주요 역할 및 해결 과정</h2>
-                    <p><strong>Terraform을 활용한 인프라 자동화 (IaC):</strong> 반복적인 인프라 구축 작업을 자동화하고 일관성을 유지하기 위해 Terraform을 도입했습니다. 모든 인프라(VPC, Subnet, EC2 등)를 코드로 관리함으로써, 휴먼 에러를 최소화하고 향후 유사한 이벤트 발생 시 신속하게 기존 환경을 재사용하고 배포할 수 있는 기반을 마련했습니다.</p>
-                    <p><strong>CI/CD 파이프라인 구축:</strong> 개발 효율성을 높이기 위해 GitHub Actions를 활용한 CI/CD 파이프라인을 구축했습니다. 팀원이 Django 설정 파일을 수정하여 GitHub에 Push하면, 자동으로 Docker 이미지를 빌드하고 Amazon ECS에 무중단 롤링 업데이트 방식으로 배포되도록 워크플로우를 설계했습니다. 이를 통해 수동 배포 과정을 제거하고, 코드 변경 사항을 신속하고 안정적으로 운영 환경에 반영할 수 있었습니다.</p>
-                    <p><strong>오토 스케일링 및 부하 분산 설계:</strong> 티켓 예매 시작과 동시에 발생하는 트래픽 급증에 유연하게 대응하기 위해 ASG와 ALB를 아키텍처의 핵심으로 구성했습니다. ALB가 사용자 요청을 여러 EC2 인스턴스에 고르게 분산시켜 특정 서버의 과부하를 방지하고, ASG는 실시간 트래픽 수요에 맞춰 인스턴스 수를 자동으로 확장 및 축소하여 최적의 자원 효율성과 성능을 유지하도록 설계했습니다.</p>
+                    <h2 class="text-2xl font-bold mt-3 mb-3 text-slate-800">主な役割と解決プロセス</h2>
+                    <p><strong>Terraformを活用したインフラ自動化 (IaC):</strong> 反復的なインフラ構築作業を自動化し、一貫性を維持するためにTerraformを導入しました。すべてのインフラ（VPC、サブネット、EC2など）をコードで管理することにより、ヒューマンエラーを最小限に抑え、将来同様のイベントが発生した際に迅速に既存の環境を再利用し、デプロイできる基盤を整えました。</p>
+                    <p><strong>CI/CDパイプラインの構築:</strong> 開発効率を高めるため、GitHub Actionsを活用したCI/CDパイプラインを構築しました。チームメンバーがDjangoの設定ファイルを修正してGitHubにPushすると、自動的にDockerイメージをビルドし、Amazon ECSに無停止ローリングアップデート方式でデプロイされるようワークフローを設計しました。これにより、手動のデプロイプロセスを排除し、コードの変更内容を迅速かつ安定的に本番環境に反映させることができました。</p>
+                    <p><strong>オートスケーリング及び負荷分散設計:</strong> チケット予約開始と同時に発生するトラフィック急増に柔軟に対応するため、ASGとALBをアーキテクチャの核心として構成しました。ALBがユーザーリクエストを複数のEC2インスタンスに均等に分散させて特定サーバーの過負荷を防ぎ、ASGはリアルタイムのトラフィック需要に合わせてインスタンス数を自動的に拡張・縮小し、最適なリソース効率とパフォーマンスを維持するよう設計しました。</p>
                 </div>
                 
-                <h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">성과</h2>
-                <p>구축된 인프라는 특정 인스턴스에 장애가 발생하더라도 이를 자동으로 감지하고 정상 인스턴스로만 트래픽을 전달하여 서비스 중단을 방지합니다. 그 결과, 사용자는 트래픽이 몰리는 상황에서도 지연 없이 티켓을 예매할 수 있는 안정적인 환경을 제공받게 되었고, 운영 비용 또한 효율적으로 관리할 수 있었습니다.</p>
+                <h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">成果</h2>
+                <p>構築されたインフラは、特定のインスタンスに障害が発生しても、これを自動的に検知し、正常なインスタンスにのみトラフィックを転送することでサービスの中断を防ぎます。その結果、ユーザーはトラフィックが集中する状況でも遅延なくチケットを予約できる安定的な環境が提供され、運用コストも効率的に管理できるようになりました。</p>
             </div>
         </div>
     </main>
 
     <div id="imageModal" class="modal-overlay">
         <div class="modal-content">
-            <img id="modalImage" src="" alt="확대된 이미지" />
+            <img id="modalImage" src="" alt="拡大画像" />
         </div>
     </div>
 
