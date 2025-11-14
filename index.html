@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>パク・ハンビ ポートフォリオ</title>
+    <title>パク・ハンビ Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
         body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif; /* Noto Sans KR을 JP로 변경하는 것이 좋습니다 */
+            font-family: 'Inter', 'Noto Sans JP', sans-serif; /* Noto Sans KR -> JP */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -88,7 +88,8 @@
                     <h1 class="text-3xl font-bold text-slate-900">パク・ハンビ</h1>
                     <p class="text-blue-600 font-semibold mt-1">Cloud Engineer</p>
                     <p class="mt-4 text-slate-500 leading-relaxed text-sm">
-                        小さなディテールから大きな安定性を作り出すエンジニアを目指しています。
+                        小さなディテールから大きな安定性を作り出す
+                        エンジニアを目指しています。
                     </p>
                     
                     <div class="mt-6 space-y-3 text-sm text-left">
@@ -193,4 +194,119 @@
                         <div>
                             <h3 class="font-semibold text-slate-700 mb-2">Containerization</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-teal-100 text-teal-800
+                                <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1 rounded-full">Docker (中)</span>
+                                <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1 rounded-full">Kubernetes (基礎)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-slate-700 mb-2">CI/CD</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">GitHub Actions (中)</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">ArgoCD (下)</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Jenkins (基礎)</span>
+                            </div>
+                        </div>
+                         <div>
+                            <h3 class="font-semibold text-slate-700 mb-2">Web</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-200 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">HTML/CSS (下)</span>
+                                <span class="bg-slate-200 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">React (下)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                    <h2 class="text-xl font-bold border-b border-slate-200 pb-2 mb-4 text-slate-800">使用可能なコラボレーションツール</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-200 text-slate-800 text-sm font-medium px-3 py-1 rounded-full">Git/Github</span>
+                        <span class="bg-slate-200 text-slate-800 text-sm font-medium px-3 py-1 rounded-full">Notion</span>
+                        <span class="bg-slate-200 text-slate-800 text-sm font-medium px-3 py-1 rounded-full">Slack</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="lg:col-span-2 space-y-8">
+                <div id="about" class="bg-white p-8 sm:p-10 rounded-2xl shadow-lg card-hover scroll-mt-24">
+                    <div class="prose prose-slate max-w-none prose-p:leading-relaxed">
+                        <h2 class="text-2xl font-bold mb-4 text-slate-900">志望動機</h2>
+                        <p>私はインフラをゼロから設計・構築するプロセスに大きなやりがいを感じ、これを継続的に発展させたいと考え、クラウドエンジニア職を志すようになりました。クラウド関連の教育を通じてAWS、Azure、Docker、Kubernetes、Terraformなど多様な技術を学び、実習を通じてその技術を習得しました。</p>
+                        <p>これらの技術を活用し、様々な形のインフラを構築するチームプロジェクト及び個人プロジェクトの経験があります。特にTerraformによるインフラ自動化では、手作業に比べて効率が大幅に向上することを体感し、GitHub Actionsを利用したCI/CDパイプライン構築では、サービスデプロイプロセスが安定的に自動化される成果を得ました。</p>
+                        <p>その中で最も印象深かった経験は、「チケット予約サービス構築プロジェクト」です。当該プロジェクトで、私はTerraformを利用してAWS環境に必要なリソースをコードで定義し、デプロイする作業を担当しました。VPC、サブネット、セキュリティグループ、EC2インスタンスなどをコードベースで生成し、同一のインフラ環境を反復的に構築できるようにしました。</p>
+                        <p>また、GitHub Actionsを活用し、アプリケーションのソースコード変更が検知されると自動的にビルド・デプロイが行われるCI/CD環境を実装しました。これにより、チーム全体の開発・運用効率が大幅に向上し、デプロイ過程で発生していた設定漏れの問題を解決することができました。</p>
+                        <p>プロジェクト経験を通じて得た自動化・安定化・効率化への理解を基に、より専門的な環境で能力を広げ、貢献したいと考え、志望いたしました。</p>
+                        
+                        <h2 class="text-2xl font-bold mt-8 mb-4 text-slate-900">長所・短所</h2>
+                        <p>私の長所は、緻密さと入念さです。プロジェクトを進める際、単に機能を実装するだけでなく、プロセスと結果を明確に文書化し、チームメンバーと共有することを重要視しています。この習慣は、業務の効率性を高め、問題発生時の迅速な原因把握に大きく役立ちました。</p>
+                        <p>一方、短所としては、細部に集中しすぎるあまり、時折作業速度が遅くなることがあります。これを補うため、優先順位を明確に設定し、主要な機能をまず完成させた後に細部を詰めていくという形で、業務スタイルを改善するよう努めています。</p>
+
+                        <h2 class="text-2xl font-bold mt-8 mb-4 text-slate-900">入社後の抱負</h2>
+                        <p>入社初期は、貴社のインフラと業務プロセスを完璧に把握し、運用の基礎を固めることに集中いたします。これを土台に、平時はシステムの安定性を維持し、障害発生時には迅速かつ正確な対応でサービスの信頼度向上に力を添えたいと考えております。実務経験を通じて得た深いシステム理解を基に、長期的には、より堅牢で柔軟なクラウドアーキテクチャを設計し、貴社のサービス品質と運用安定性の向上に貢献できるエンジニアへと成長してまいります。</p>
+                    </div>
+                </div>
+
+                <div id="projects-preview" class="scroll-mt-24">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Projects</h2>
+                    <div class="grid grid-cols-1 gap-8">
+                        <a href="./project1.html" class="block bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                            <img src="pj1.png" alt="Ticket Topia アーキテクチャ設計図" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-800">Ticket Topia</h3>
+                                <p class="text-sm text-slate-500 mt-1">2024年 7月 ~ 8月</p>
+                                <p class="mt-3 text-slate-600 leading-relaxed">拡張性及び再利用性を考慮した大規模チケット予約サービスインフラの構築</p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2 py-1 rounded-full">AWS</span>
+                                    <span class="bg-violet-100 text-violet-800 text-xs font-semibold px-2 py-1 rounded-full">Terraform</span>
+                                    <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2 py-1 rounded-full">Docker</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./project2.html" class="block bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                            <img src="pj2.png" alt="リアルタイムテトリスマッチングプラットフォーム アーキテクチャ" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-800">リアルタイムテトリスマッチングプラットフォーム</h3>
+                                <p class="text-sm text-slate-500 mt-1">2025年 9月</p>
+                                <p class="mt-3 text-slate-600 leading-relaxed">AzureとKubernetesを活用した安定的かつスケーラブルなリアルタイムゲームサービスインフラの構築</p>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2 py-1 rounded-full">Azure</span>
+                                    <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2 py-1 rounded-full">Kubernetes</span>
+                                    <span class="bg-violet-100 text-violet-800 text-xs font-semibold px-2 py-1 rounded-full">Terraform</span>
+                                    <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded-full">ArgoCD</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="資格証" />
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const certificateLinks = document.querySelectorAll('.certificate-link');
+
+            certificateLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modalImage.src = this.href;
+                    modal.classList.add('active');
+                });
+            });
+
+            modal.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
