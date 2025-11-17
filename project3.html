@@ -102,7 +102,7 @@
                     <p>Azure Firewallを中心とするHub-Spokeトポロジを設計。全Spoke VNet (DB, VDI, On-Prem) のトラフィックが必ずHub Firewallを経由するようUDR(ユーザー定義ルート)を構成しました。特にDB VNet内部のクラスタ通信（クォーラム、ハートビート）がUDRによって遮断される問題を「VNetLocal」ルート追加で解決し、セキュアな経路を確立しました。</p>
                     
                     <h3 class="text-xl font-semibold mt-6 mb-2 text-slate-800">2. SQL Server 高可用性(HA)の二重実装 (FCI & Always On)</h3>
-                    <p><code>zrs.ps1</code>スクリプトと<code>always_on_fci_.md</code>ガイドに基づき、2つの異なるHAソリューションを同一VNet内に構築。FCI(Failover Cluster Instance)用にはZRS共有ディスク（ゾーン障害対応）を、Always On(AG)用にはLRSローカルディスク（SQLレベルでのデータ複製）を使用し、可用性ゾーン(Zone 1, Zone 2)を跨いだデプロイを実装しました。</p>
+                    <p>2つの異なるHAソリューションを同一VNet内に構築。FCI(Failover Cluster Instance)用にはZRS共有ディスク（ゾーン障害対応）を、Always On(AG)用にはLRSローカルディスク（SQLレベルでのデータ複製）を使用し、可用性ゾーン(Zone 1, Zone 2)を跨いだデプロイを実装しました。</p>
 
                     <h3 class="text-xl font-semibold mt-6 mb-2 text-slate-800">3. クラスタ内部通信と認証のトラブルシューティング</h3>
                     <p>UDRが原因で発生した<code>DISCONNECTED</code> (5022ポート)及び<code>not part of quorum</code> (クォーラム)エラーをデバッグ。Windows内部ファイアウォールとSQLエンドポイント(<code>Hadr_endpoint</code>)の状態を検証し、問題を特定しました。また、AOノード間で<code>Login failed (18456)</code>エラーが発生した際、両ノードのSQLログインSIDが不一致であることを突き止め、SIDを強制的に同期させることで問題を解決しました。</p>
