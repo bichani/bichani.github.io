@@ -90,7 +90,7 @@
                 </div>
 
                 <h2 class="text-2xl font-bold mt-8 mb-2 text-slate-800">プロジェクト目標</h2>
-                <p>3ティアアプリケーション(Sub 2)とAVD(Sub 4)環境をサポートするため、Azureのマルチサブスクリプション(Hub-Spoke)環境を構築。セキュリティ(Azure Firewall)を中央集権化し、かつゾーン障害にも耐えうる二重のSQL高可用性(FCI, AO)基盤を確立することを目標としました。</p>
+                <p>3ティアアプリケーション(Sub 2)とAVD(Sub 4)環境をサポートするため、Azureのマルチサブスクリプション(Hub-Spoke)環境を構築。セキュリティ(Azure Firewall)を中央集権化し、かつゾーン障害にも耐えうる二重のSQL高可用性(FCI, Always On)基盤を確立することを目標としました。</p>
                 
                 <div class="border-t border-slate-200 pt-4 mt-6">
                     <h2 class="text-2xl font-bold mt-3 mb-3 text-slate-800">主な役割と解決プロセス</h2>
@@ -102,10 +102,10 @@
                     <p>2つの異なるHAソリューションを同一VNet内に構築。FCI(Failover Cluster Instance)用にはZRS共有ディスク（ゾーン障害対応）を、Always On(AG)用にはLRSローカルディスク（SQLレベルでのデータ複製）を使用し、可用性ゾーン(Zone 1, Zone 2)を跨いだデプロイを実装しました。</p>
 
                     <h3 class="text-xl font-semibold mt-6 mb-2 text-slate-800">3. クラスタ内部通信と認証のトラブルシューティング</h3>
-                    <p>UDRが原因で発生した<code>DISCONNECTED</code> (5022ポート)及び<code>not part of quorum</code> (クォーラム)エラーをデバッグ。Windows内部ファイアウォールとSQLエンドポイント(<code>Hadr_endpoint</code>)の状態を検証し、問題を特定しました。また、AOノード間で<code>Login failed (18456)</code>エラーが発生した際、両ノードのSQLログインSIDが不一致であることを突き止め、SIDを強制的に同期させることで問題を解決しました。</p>
+                    <p>UDRが原因で発生したDISCONNECTED (5022ポート)及びnot part of quorum (クォーラム)エラーをデバッグ。Windows内部ファイアウォールとSQLエンドポイント(Hadr_endpoint)の状態を検証し、問題を特定しました。また、Always Onノード間でLogin failed (18456)エラーが発生した際、両ノードのSQLログインSIDが不一致であることを突き止め、SIDを強制的に同期させることで問題を解決しました。</p>
 
                     <h3 class="text-xl font-semibold mt-6 mb-2 text-slate-800">4. 3ティア連携テスト</h3>
-                    <p>IISとASP.NETでテストWebページ(<code>dbtest.aspx</code>)を作成。Web VM(Sub 2)からDBリスナー(Sub 3)への接続テストを実施し、FCI(<code>10.20.1.100</code>)とAO(<code>10.20.1.200</code>)両方のHA環境でSQL認証(<code>web_app_user</code>)によるDB接続が成功することを検証しました。</p>
+                    <p>Web VM(Sub 2)からDBリスナー(Sub 3)への接続テストを実施し、FCI(10.20.1.100)とAO(10.20.1.200)両方のHA環境でSQL認証(web_app_user)によるDB接続が成功することを検証しました。</p>
                 </div>
                 
                 </div>
